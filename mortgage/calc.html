@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>morgage</title>
+  </head>
+  <body>
+    <div class="mortageCal">
+      <div class="left">
+        <div class="header">
+          <h2>Mortage Calculator</h2>
+          <button class="mybtn">My-button</button>
+        </div>
+        <form id="mortgageForm">
+          <div class="formItem">
+            <label class="lightText" for="mortgageAmount"
+              >Mortage-Ammount</label
+            >
+            <div class="formFlex" id="mortageAmountMain">
+              <p class="formSymbol">$</p>
+              <input
+                id="mortgageAmount"
+                type="number"
+                name="mortgageAmount"
+                required
+              />
+            </div>
+            <p class="formAlert" id="amountAlert">This field is Required</p>
+          </div>
+          <div class="formItem">
+            <div class="formColum">
+              <div class="formItem">
+                <label for="mortgageTerm" class="lightText">
+                  Mortgage-Terms
+                </label>
+                <div class="formFlex" id="mortgageTerm">
+                  <input id="mortgageTerm" type="number" required />
+                  <p class="formSymbol">years</p>
+                  <p class="formAlert" id="termAlert">This field is Required</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>

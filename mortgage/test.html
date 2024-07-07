@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Calculator</title>
+  </head>
+  <body>
+    <div class="mortgageCalculator">
+      <div class="left">
+        <div class="header">
+          <h2>Mortgage Calculator</h2>
+          <button id="clearBtn">Clear All</button>
+        </div>
+        <form id="mortgageForm">
+          <div class="formItem">
+            <label for="mortgageAmount" class="lightText"
+              >Mortgage Amount</label
+            >
+            <div class="formFlex" id="mortgageAmountMain">
+              <p class="formSymbol">$</p>
+              <input
+                id="mortgageAmount"
+                type="number"
+                name="mortgageAmount"
+                required
+              />
+            </div>
+            <p class="formAlert" id="amountAlert">This Field is required</p>
+          </div>
+          <div class="formItem">
+            <div class="formCol">
+              <div class="formItem">
+                <label for="mortgageTerm" class="lightText"
+                  >Mortgage Term</label
+                >
+                <div class="formFlex" id="mortgageTermMain">
+                  <input
+                    id="mortgageTerm"
+                    type="number"
+                    name="Mortgage Term"
+                    required
+                  />
+                  <p class="formSymbol">years</p>
+                </div>
+                <p class="formAlert" id="termAlert">This field is Required</p>
+              </div>
+              <div class="formItem">
+                <label class="lightText" for="interestRate"
+                  >Interest Rate</label
+                >
+                <div class="formFlex" id="interestRateMain">
+                  <input
+                    id="interestRate"
+                    type="number"
+                    name="interestRate"
+                    step="0.01"
+                    required
+                  />
+                  <p class="formSymbol">%</p>
+                </div>
+                <p class="formAlert" id="rateAlert">This Field is required</p>
+              </div>
+            </div>
+          </div>
+          <div class="formItem">
+            <label class="lightText">Mortgage Type</label>
+            <div class="radioInput">
+              <input
+                type="radio"
+                id="repayment"
+                class="mortgageType"
+                name="mortgageType"
+                value="repayment"
+                required
+              />
+              <label for="repayment">Repayment</label>
+            </div>
+            <div class="radioInput">
+              <input
+                type="radio"
+                id="interestOnly"
+                class="mortgageType"
+                name="mortgageType"
+                value="interestOnly"
+                required
+              />
+              <label for="interestOnly">Interest Only</label>
+            </div>
+            <p class="formAlert" id="typeAlert">This field is Required</p>
+          </div>
+          <div class="formItem">
+            <button id="calculate-btn" class="calculate-btn" type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#133041"
+                  d="M18.75 2.25H5.25a1.5 1.5 0 0 0-1.5 1.5v16.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V3.75a1.5 1.5 0 0 0-1.5-1.5Zm-10.5 16.5a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 18.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25ZM12 15a1.125 1.125 0 1 1 0-2.25A1.125 1.125 0 0 1 12 15Zm3.75 3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm0-3.75a1.125 1.125 0 1 1 0-2.25 1.125 1.125 0 0 1 0 2.25Zm1.5-5.25a.75.75 0 0 1-.75.75h-9a.75.75 0 0 1-.75-.75V6a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 .75.75v3.75Z"
+                />
+              </svg>
+              Calculate Repayments
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="right">
+        <div id="defaultText" class="defaultText">
+          <img src="illustration-empty.svg" alt="" />
+          <h2>Result shown here</h2>
+          <p class="lightText">
+            Complete the form and click "Calculate" to see your monthly payment
+          </p>
+        </div>
+        <div
+          id="calculationContainer"
+          class="calculationContainer"
+          style="display: none"
+        >
+          <h2>Your Results</h2>
+          <p class="lightText">
+            Your results are shown below based on the information you provided.
+            To adjust the results, edit the form and click "calculate
+            repayments" again.
+          </p>
+          <div class="calculations">
+            <div class="monthly">
+              <p class="lightText">Your monthly repayments</p>
+              <span id="result" class="monthlyResult"></span>
+            </div>
+            <div class="line"></div>
+            <div class="totalTerm">
+              <p class="lightText">Total you will repay over the term</p>
+              <span id="termResult" class="monthlyResult"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="test.js"></script>
+  </body>
+</html>
